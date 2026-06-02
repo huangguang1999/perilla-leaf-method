@@ -7,7 +7,7 @@
 一个判断**任何事物**的 Claude Agent Skill —— 一件事的好坏、一个物品的优劣、一个决策做不做、两个选项哪个更好。
 **别只盯显眼又贵的「金枪鱼」，往下拆到那片「没它整套就端不上来」的紫苏叶**（决定性、不可替代的底层环节）；**从底层事实出发，不从叙事出发**；一句话压舱：**「这件事撞到墙的时候，墙在哪里？」**
 
-> 方法蒸馏自 X 投资人 Serenity（[@aleabitoreddit](https://x.com/aleabitoreddit)）的推理方式，由 [@yijiangren](https://x.com/yijiangren/status/2060572559863935050) 总结命名为「紫苏叶理论」，**已通用化、去除其原本投资领域细节**。NFA / 仅判断参考，最终自己拿主意。
+> 底层方法出自 X 投资人 Serenity（[@aleabitoreddit](https://x.com/aleabitoreddit)）；「紫苏叶」寿司比喻与「紫苏叶理论」之名出自 [@yijiangren](https://x.com/yijiangren/status/2060572559863935050) 的解读长文（据 X 检索 Serenity 本人未用过此比喻）。**本方法已通用化、去除其原本投资领域细节**。NFA / 仅判断参考，最终自己拿主意。
 
 ---
 
