@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>证据 → 推断 · SMCI</title>
+<style>
+  :root{
+    --paper:#fbf7ee; --card:#fffdf7; --ink:#3a342b; --ink-soft:#7a7163;
+    --line:#d9cfba; --spine:#cdbf9f; --accent:#7a8a5e; --accent-soft:#eef0e4;
+    --amber:#b07d22; --amber-soft:#f5ecd7; --amber-line:#e2cf9f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{background:var(--paper);font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",-apple-system,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+  .sheet{width:768px;margin:56px auto 72px;padding:0 24px;}
+  .goal{text-align:center;margin-bottom:54px;}
+  .goal .eyebrow{font-size:12px;letter-spacing:.32em;color:var(--ink-soft);text-transform:uppercase;}
+  .goal h1{margin-top:14px;font-size:24px;font-weight:600;letter-spacing:.01em;line-height:1.45;}
+  .goal .meta{margin-top:12px;font-size:12px;line-height:1.65;color:var(--ink-soft);}
+  .goal .rule{width:46px;height:1px;background:var(--line);margin:20px auto 0;}
+  .chain{position:relative;padding-left:46px;}
+  .chain::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:1px;background:var(--spine);}
+  .step{position:relative;margin-bottom:42px;}
+  .step:last-child{margin-bottom:0;}
+  /* 纯数字序号：细体斜体衬线，深色、稍大、上下留白 */
+  .num{position:absolute;left:-47px;top:-7px;width:29px;height:44px;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:23px;font-weight:400;display:flex;align-items:center;justify-content:center;z-index:2;}
+  .evidence,.inference{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;line-height:1.6;font-size:15px;}
+  .evidence .tag{display:block;font-size:11px;letter-spacing:.18em;color:var(--ink-soft);margin-bottom:5px;}
+  .evidence .note{color:var(--ink-soft);font-style:italic;}
+  .arrow{display:flex;justify-content:center;color:var(--spine);font-size:15px;line-height:1;padding:7px 0;}
+  .inference .tag{display:block;font-size:11px;letter-spacing:.18em;color:var(--accent);margin-bottom:5px;}
+  .inference .key{color:var(--ink);font-weight:600;}
+  .inference .crux{color:var(--amber);font-weight:600;}
+  /* 结论：偏谨慎 → 琥珀色 */
+  .verdict{margin-top:54px;background:var(--amber-soft);border:1px solid var(--amber-line);border-left:3px solid var(--amber);border-radius:14px;padding:20px 22px;}
+  .verdict .tag{display:block;font-size:11px;letter-spacing:.2em;color:var(--amber);margin-bottom:8px;}
+  .verdict p{font-size:16px;line-height:1.7;color:var(--ink);}
+  .verdict .lean{font-weight:600;color:var(--amber);}
+  .verdict .small{display:block;margin-top:10px;font-size:13px;color:var(--ink-soft);line-height:1.65;}
+  .disclaimer{margin-top:22px;padding-top:14px;border-top:1px solid var(--amber-line);font-size:12px;line-height:1.65;color:var(--ink-soft);}
+</style>
+</head>
+<body>
+  <main class="sheet">
+    <header class="goal">
+      <div class="eyebrow">判断目标</div>
+      <h1>我这笔 $SMCI 持仓该怎么看？（值不值得继续拿）</h1>
+      <div class="meta">示例生成日期：2026-06-02 · 信息口径：公开资料、财报电话会、公司公告、可信媒体报道摘要 · 非实时投资建议</div>
+      <div class="rule"></div>
+    </header>
+
+    <section class="chain">
+
+      <article class="step">
+        <div class="num">1</div>
+        <div class="evidence"><span class="tag">证据</span>NVDA Blackwell/Rubin 首批 + xAI Colossus 超大单，AI GPU 平台占营收 &gt;80%、record backlog <span class="note">✅查到</span>。</div>
+        <div class="arrow">↓</div>
+        <div class="inference"><span class="tag">所以</span>需求端是<span class="key">真顺风、营收规模大</span>（FY26 指引 $38.9–40.4B）。</div>
+      </article>
+
+      <article class="step">
+        <div class="num">2</div>
+        <div class="evidence"><span class="tag">证据</span>毛利仅 ~5–10%，管理层指引下季再降约 300bps，靠 survival pricing 抢标 <span class="note">✅查到</span>。</div>
+        <div class="arrow">↓</div>
+        <div class="inference"><span class="tag">所以</span>这是<span class="key">低毛利、无定价权</span>的组装/集成生意 <span class="crux">（决定项）</span>。</div>
+      </article>
+
+      <article class="step">
+        <div class="num">3</div>
+        <div class="evidence"><span class="tag">证据</span>Dell/HPE 已出同等液冷整机，且有品牌 + 全球服务 + 多元营收 <span class="note">✅查到</span>。</div>
+        <div class="arrow">↓</div>
+        <div class="inference"><span class="tag">所以</span><span class="key">没有持久护城河</span>，份额与毛利长期被挤。</div>
+      </article>
+
+      <article class="step">
+        <div class="num">4</div>
+        <div class="evidence"><span class="tag">证据</span>DCBBS 打包方案，管理层称带 ~20% 增量毛利、目标年底占利润双位数（现仅 ~4%）<span class="note">⚠️ 管理层口径·待兑现</span>。</div>
+        <div class="arrow">↓</div>
+        <div class="inference"><span class="tag">所以</span>毛利能否翻身的<span class="key">关键变量，但尚未兑现</span> <span class="crux">（决定项）</span>。</div>
+      </article>
+
+      <article class="step">
+        <div class="num">5</div>
+        <div class="evidence"><span class="tag">证据</span>会计风波（'24 做空/审计师辞任，'26-01 复合规）+ 近期被指违规对华出口 AI 服务器、遭出口管制调查 <span class="note">✅查到</span>。</div>
+        <div class="arrow">↓</div>
+        <div class="inference"><span class="tag">所以</span><span class="key">治理/法律尾险</span>，且让基本面数字可信度打折 <span class="crux">（决定项·最不可控）</span>。</div>
+      </article>
+
+      <article class="step">
+        <div class="num">6</div>
+        <div class="evidence"><span class="tag">证据</span>forward P/S ~0.41，远低于行业均值 2.43 <span class="note">✅查到</span>。</div>
+        <div class="arrow">↓</div>
+        <div class="inference"><span class="tag">所以</span>已 <span class="key">price-in 不少悲观</span>，便宜本身提供一点安全垫。</div>
+      </article>
+
+    </section>
+
+    <footer class="verdict">
+      <span class="tag">结论 · 把握 中</span>
+      <p>
+        <span class="lean">质量不高、偏谨慎持有</span>——便宜 + AI 真顺风，但低毛利无护城河 + 治理/出口尾险叠加；它更像<strong>高波动的事件博弈</strong>，不是高质量长期复利。
+        <span class="small">▸ 加分/续抱的验证：毛利随 DCBBS <strong>止跌回升</strong>、出口调查不升级、头部大客户续单。<br>▸ 减仓/离场的触发：毛利继续走低且 DCBBS 不及预期 · 出口管制/法律升级 · 大客户流失或转自研。</span>
+        <span class="disclaimer">说明：本页是 serenity-method 的图形化示例，目的是展示「证据 → 推断」写法；不是实时证券研究。涉及 SMCI 的数据与事件会随时间变化，复用前必须重新核实最新财报、公告、监管文件、公司电话会和可信媒体报道。NFA，不构成投资建议。</span>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>

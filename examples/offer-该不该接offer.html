@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>证据 → 推断</title>
+<style>
+  :root{
+    --paper:#fbf7ee;
+    --card:#fffdf7;
+    --ink:#3a342b;
+    --ink-soft:#7a7163;
+    --line:#d9cfba;
+    --spine:#cdbf9f;
+    --accent:#7a8a5e;      /* 温和橄榄绿，偏好倾向 */
+    --accent-soft:#eef0e4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:var(--paper);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",-apple-system,sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{
+    width:768px;
+    margin:56px auto 72px;
+    padding:0 24px;
+  }
+
+  /* 标题 */
+  .goal{
+    text-align:center;
+    margin-bottom:54px;
+  }
+  .goal .eyebrow{
+    font-size:12px;
+    letter-spacing:.32em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+  .goal h1{
+    margin-top:14px;
+    font-size:25px;
+    font-weight:600;
+    letter-spacing:.01em;
+    line-height:1.4;
+  }
+  .goal .rule{
+    width:46px;
+    height:1px;
+    background:var(--line);
+    margin:20px auto 0;
+  }
+
+  /* 脊柱 */
+  .chain{
+    position:relative;
+    padding-left:46px;
+  }
+  .chain::before{
+    content:"";
+    position:absolute;
+    left:13px;
+    top:6px;
+    bottom:6px;
+    width:1px;
+    background:var(--spine);
+  }
+
+  .step{
+    position:relative;
+    margin-bottom:42px;
+  }
+  .step:last-child{margin-bottom:0;}
+
+  /* 纯数字序号：细体斜体衬线，深色、稍大、上下留白，页面底色把脊柱线在数字处断开 */
+  .num{
+    position:absolute;
+    left:-47px;
+    top:-7px;
+    width:29px;
+    height:44px;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:Georgia,"Times New Roman",serif;
+    font-style:italic;
+    font-size:23px;
+    font-weight:400;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:2;
+  }
+
+  .evidence,.inference{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:14px 18px;
+    line-height:1.6;
+  }
+  .evidence{
+    font-size:15px;
+  }
+  .evidence .tag{
+    display:block;
+    font-size:11px;
+    letter-spacing:.18em;
+    color:var(--ink-soft);
+    margin-bottom:5px;
+  }
+  .evidence .note{
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+
+  .arrow{
+    display:flex;
+    justify-content:center;
+    color:var(--spine);
+    font-size:15px;
+    line-height:1;
+    padding:7px 0;
+  }
+
+  .inference{
+    background:var(--card);
+    font-size:15px;
+  }
+  .inference .tag{
+    display:block;
+    font-size:11px;
+    letter-spacing:.18em;
+    color:var(--accent);
+    margin-bottom:5px;
+  }
+  .inference .key{
+    color:var(--ink);
+    font-weight:600;
+  }
+
+  /* 结论 */
+  .verdict{
+    margin-top:54px;
+    background:var(--accent-soft);
+    border:1px solid #d4d9c4;
+    border-left:3px solid var(--accent);
+    border-radius:14px;
+    padding:20px 22px;
+  }
+  .verdict .tag{
+    display:block;
+    font-size:11px;
+    letter-spacing:.2em;
+    color:var(--accent);
+    margin-bottom:8px;
+  }
+  .verdict p{
+    font-size:16px;
+    line-height:1.65;
+    color:var(--ink);
+  }
+  .verdict .lean{
+    font-weight:600;
+    color:var(--accent);
+  }
+</style>
+</head>
+<body>
+  <main class="sheet">
+
+    <header class="goal">
+      <div class="eyebrow">判断目标</div>
+      <h1>该不该接这个跳槽 offer？</h1>
+      <div class="rule"></div>
+    </header>
+
+    <section class="chain">
+
+      <article class="step">
+        <div class="num">1</div>
+        <div class="evidence">
+          <span class="tag">证据</span>
+          薪资 +40%，但目标城市生活成本约 +25% <span class="note">✅查到/可核算</span>。
+        </div>
+        <div class="arrow">↓</div>
+        <div class="inference">
+          <span class="tag">所以</span>
+          实际可支配收入增幅约 <span class="key">+12%</span>，不如标价亮眼。
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">2</div>
+        <div class="evidence">
+          <span class="tag">证据</span>
+          新岗位在核心业务线，直接向 VP 汇报 <span class="note">✅ offer 沟通确认</span>。
+        </div>
+        <div class="arrow">↓</div>
+        <div class="inference">
+          <span class="tag">所以</span>
+          成长性与话语权<span class="key">明显更高</span>。
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">3</div>
+        <div class="evidence">
+          <span class="tag">证据</span>
+          该团队近一年离职率高、连换 2 个负责人
+          <span class="note">⚠️ 外部打听，待核实</span>。
+        </div>
+        <div class="arrow">↓</div>
+        <div class="inference">
+          <span class="tag">所以</span>
+          组织稳定性差，是<span class="key">最大风险点（决定项）</span>。
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">4</div>
+        <div class="evidence">
+          <span class="tag">证据</span>
+          现公司 18 个月内大概率没晋升坑 <span class="note">💭 基于现有组织信息判断</span>。
+        </div>
+        <div class="arrow">↓</div>
+        <div class="inference">
+          <span class="tag">所以</span>
+          留下的<span class="key">机会成本在上升</span>。
+        </div>
+      </article>
+
+    </section>
+
+    <footer class="verdict">
+      <span class="tag">结论 · 把握 中</span>
+      <p>
+        <span class="lean">倾向接</span>，但「团队稳定性」是决定项——入职前必须先核实负责人是否稳定；若核实不了，把握降为小。
+      </p>
+    </footer>
+
+  </main>
+</body>
+</html>
